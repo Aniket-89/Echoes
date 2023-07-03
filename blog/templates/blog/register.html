@@ -1,0 +1,13 @@
+{% extends 'core.html' %}
+
+{% block content %}
+<div class="login-container">
+
+    <form action="" method="POST" class="user-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        
+        <input type="submit" value="Submit" class="button">
+    </form>
+</div>
+{% endblock %}

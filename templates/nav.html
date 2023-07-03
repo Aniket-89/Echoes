@@ -1,0 +1,76 @@
+{% load static %}
+
+<header class="header">
+  <div class="flex-between nav1">
+    <a href="{% url 'home' %}">
+      <img
+        class="brand-logo"
+        src="{% static 'blog/images/brand_logo.png' %}"
+        alt="Brand Logo"
+      />
+    </a>
+
+    <form method="GET" action="{% url 'home' %}">
+      <input
+        type="text"
+        class="search-box"
+        name="q"
+        placeholder="Search Blogs..."
+      />
+    </form>
+  </div>
+  <nav class="nav">
+    <ul class="nav__links">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="{% url 'create' %}">Create</a></li>
+    </ul>
+    <div class="auth-btn">
+      {% if user.is_authenticated %}
+      <!-- Greetings -->
+      <!-- <span>Hi, {{user}}</span> -->
+      <a href="{% url 'logout' %}" class="login-logout">Logout</a>
+      {% else %}
+
+      <a href="{% url 'login' %}" class="login-logout">Login</a>
+      <span>
+        <!-- <a href="{% url 'register' %}" >Signup</a> -->
+        <a href="{% url 'register' %}" class="button">Signup</a>
+      </span>
+      {% endif %}
+    </div>
+
+    <div class="nav__mobile-menu">
+      <a href="#"
+        ><img src="{% static 'blog/images/menu.png' %}" alt="menu-icon"
+      /></a>
+      <!-- Mobile menu -->
+      <!--         
+            <ul class="nav__links-mobile">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Post</a></li>
+            </ul> -->
+    </div>
+  </nav>
+  <!-- <nav class="nav">
+        
+        <a href="{% url 'create' %}">Create New Blog</a>
+        
+        <div class="nav-right">
+            
+            {% if user.is_authenticated %}
+                <span>Hi, {{user}}</span>
+                <a href="{% url 'logout' %}" >Logout</a>
+            {% else %}
+
+                <a href="{% url 'login' %}" >Login</a>
+                <span>
+                    <a href="{% url 'register' %}" >Signup</a>
+                </span>
+            {% endif %}
+        </div>
+    </nav> -->
+</header>

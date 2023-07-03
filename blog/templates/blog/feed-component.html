@@ -1,0 +1,42 @@
+<section class="feed">
+  <p>Total echoes - {{post_count}}</p>
+  {% for post in posts %}
+  <div class="feed__post-container">
+    <div class="feed__post">
+      {% if post.image and post.image.url %}
+      <img src="{{ post.image.url }}" class="feed__post__image" alt="image" />
+      {% else %}
+      <img
+        src="https://mix-breed.com/wp-content/uploads/2017/06/wood-blog-placeholder.jpg"
+        alt="Blog image"
+        class="feed__post__image"
+      />
+      {% endif %}
+      <div class="feed__post__content">
+        <div class="flex-between">
+          <p class="fs-small">
+            Posted by
+            <strong
+              ><a href="{% url 'author' post.author.id %}">
+                {% if request.user.author == post.author %} me {% else %}
+                {{post.author}} {% endif %}</a
+              ></strong
+            >
+          </p>
+
+          {% if user.is_authenticated and request.user.author == post.author %}
+          <a href="{% url 'edit' post.id %}" class="edit-link">Edit</a>
+          {% endif %}
+        </div>
+
+        <a href="{% url 'post' post.id %}" class="link-underline">
+          <h2 class="post-heading">{{post.title}}</h2>
+        </a>
+
+        <p class="summary">{{post.summary}}</p>
+        <p class="fs-small clr-accent">Posted on {{post.pub_date}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>

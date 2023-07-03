@@ -1,0 +1,25 @@
+{% load static %}
+
+<footer class="footer grid-col">
+    <div class="flex-between">
+
+        <a href="{% url 'home' %}">
+            <img
+            class="brand-logo"
+            src="{% static 'blog/images/brand_logo.png' %}"
+            alt="Brand Logo"
+            />
+        </a>
+        
+        <nav class="nav">
+            
+            <ul class="nav__links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+        <p class="clr-accent fs-small">2023 Echoes. All right reserved.</p>
+</footer>

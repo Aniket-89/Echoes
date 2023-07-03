@@ -1,0 +1,11 @@
+{% extends 'core.html' %}
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %}
+    
+    <h1>Are you sure you want to delete this post?</h1>
+    <p><input type="submit" value="Confirm" />  <a href="../">Cancel</a></p>
+
+</form>
+{% endblock %}
+

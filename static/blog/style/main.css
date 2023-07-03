@@ -1,0 +1,321 @@
+:root {
+    --clr-primary-400: lightgreen;
+    --clr-secondary-400: orange;
+
+    --clr-accent-300: yellow;
+
+    --clr-neutral-100: #fff;
+    --clr-neutral-300: #eee5e5;
+    --clr-neutral-500: gray;
+    --clr-neutral-700: #251616;
+    --clr-neutral-900: #000;
+
+    --fs-300: 0.9rem;
+    --fs-400: 1rem;
+    --fs-500: 1.2rem;
+    --fs-700: 2rem;
+    --fs-900: 3rem;
+
+    --fw-small: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-extra-bold: 900;
+
+    --ff-default: 'Montserrat', sans-serif;
+}
+
+html {
+    font-size: 16px;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: var(--clr-neutral-900);
+    line-height: 1;
+
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--ff-default);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-400);
+    min-width: 100%;
+
+}
+
+main {
+    width: 100%;
+}
+
+.fs-small {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-small);
+}
+
+.clr-accent {
+    color: var(--clr-secondary-400);
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    gap: 1rem;
+
+}
+
+
+.header {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    /* justify-content: space-between; */
+
+    gap: 2rem;
+
+    padding: 1.5rem 1.5rem;
+
+    height: 74px;
+
+    background-color: var(--clr-primary-400);
+    box-shadow: 3px 0px 5px var(--clr-neutral-500);
+}
+
+
+.brand-logo {
+    min-width: 4.5rem;
+    height: 3rem;
+    /* width: 4.5rem; */
+}
+
+.nav {
+    --fs-nav-links: var(--fs-500);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+
+    gap: 4rem;
+
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-nav-links);
+
+}
+
+.auth-btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.nav__mobile-menu {
+    display: none;
+    width: 18px;
+    height: 16px;
+
+}
+
+.nav__links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav a {
+    color: var(--clr-neutral-100);
+
+
+}
+
+.nav a:is(:hover, :focus, :active) {
+
+    color: var(--clr-secondary-400);
+    text-decoration: underline;
+}
+
+header form {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.search-box {
+    line-height: 1.5;
+    width: 100%;
+
+    padding: 0.2rem 1.5rem;
+
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+.button {
+    /* display: flex;
+    flex: 1; */
+    width: 100%;
+    padding: 0.5rem 2rem;
+
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-nav-links);
+    font-weight: var(--fw-bold);
+    background-color: var(--clr-secondary-400);
+
+    border: none;
+    outline: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.button:is(:hover, :focus) {
+    color: var(--clr-neutral-700);
+    background-color: var(--clr-neutral-300);
+}
+
+.login-logout {
+    text-decoration: underline;
+}
+
+/* 
+.search-bar {
+    
+    
+} */
+
+@media (max-width:978px) {
+
+    .auth-btn,
+    .nav__links {
+        display: none;
+
+    }
+
+    .nav {
+        flex: 0;
+    }
+
+    .flex-between {
+        justify-content: space-between;
+
+    }
+
+    header form {
+        max-width: 300px;
+    }
+
+    .nav__mobile-menu {
+        display: block;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.feed {
+    margin: 1.5rem 4rem;
+    display: grid;
+    gap: 1rem;
+
+}
+
+.feed__post {
+    display: flex;
+
+    gap: 2rem;
+    height: 250px;
+    /* margin: 1rem; */
+
+    background-color: var(--clr-neutral-300);
+
+}
+
+.feed__post__image {
+    width: 30%;
+    background-color: var(--clr-accent-300);
+    /* background-image: url(); */
+    /* object-fit: contain; */
+}
+
+.feed__post__content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 1rem;
+
+    gap: 1rem;
+    width: 100%;
+}
+
+.post__heading {
+    font-size: var(--fs-900);
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-900);
+}
