@@ -178,7 +178,7 @@ def resize_image(image):
     img = Image.open(image)
     max_width = 800
     max_height = 600
-    img.thumbnail((max_width, max_height), Image.ANTIALIAS)
+    img.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
     image_buffer = BytesIO()
     img.save(image_buffer, format='JPEG')
     image_buffer.seek(0)
