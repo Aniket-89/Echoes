@@ -3,15 +3,18 @@
   {% for post in posts %}
   <div class="feed__post-container">
     <div class="feed__post">
-      {% if post.image and post.image.url %}
-      <img src="{{ post.image.url }}" class="feed__post__image" alt="image" />
-      {% else %}
-      <img
-        src="https://mix-breed.com/wp-content/uploads/2017/06/wood-blog-placeholder.jpg"
-        alt="Blog image"
-        class="feed__post__image"
-      />
-      {% endif %}
+      <div class="post-detail__image-cont">
+        {% if post.image and post.image.url %}
+        <img src="{{ post.image.url }}" class="feed__post__image" alt="image" />
+        {% else %}
+        <img
+          src="https://mix-breed.com/wp-content/uploads/2017/06/wood-blog-placeholder.jpg"
+          alt="Blog image"
+          class="feed__post__image"
+        />
+
+        {% endif %}
+      </div>
       <div class="feed__post__content">
         <div class="flex-between">
           <p class="fs-small">

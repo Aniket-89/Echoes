@@ -1,17 +1,17 @@
 :root {
-    --clr-primary-400: lightgreen;
-    --clr-secondary-400: orange;
+    --clr-primary-400: #2bd89a;
+    --clr-secondary-400: #0055b2;
 
-    --clr-accent-300: yellow;
+    --clr-accent-300: #e9e784;
     --clr-accent-400: rgb(84, 84, 235);
 
-    --clr-error-400: red;
+    --clr-error-400: #fa6945;
 
-    --clr-neutral-100: #fff;
-    --clr-neutral-300: #eee5e5;
-    --clr-neutral-500: gray;
-    --clr-neutral-700: #251616;
-    --clr-neutral-900: #000;
+    --clr-neutral-100: #eafef3;
+    --clr-neutral-300: #d9eddf;
+    --clr-neutral-500: #9bb0a5;
+    --clr-neutral-700: #394336;
+    --clr-neutral-900: #002109;
 
     --fs-300: 0.9rem;
     --fs-400: 1rem;
@@ -127,8 +127,19 @@ main {
     padding: 0 1rem;
 }
 
+.flex-group {
+    display: flex;
+}
+
 .grid-col {
     display: grid;
+
+    gap: 0.5rem;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
 }
 
 .fs-small {
@@ -174,8 +185,10 @@ main {
 
 .footer {
     flex: 0;
-    padding: 1rem;
-    background-color: var(--clr-neutral-700);
+    padding: 0.5rem;
+    background-color: var(--clr-neutral-900);
+
+    gap: 0.5rem;
 
     color: var(--clr-neutral-100);
 
@@ -217,6 +230,10 @@ main {
     font-weight: var(--fw-bold);
     font-size: var(--fs-nav-links);
 
+}
+
+.footer-nav {
+    margin-right: 2rem;
 }
 
 .auth-btn {
@@ -300,31 +317,6 @@ header form {
     
 } */
 
-@media (max-width:978px) {
-
-    .auth-btn,
-    .nav__links {
-        display: none;
-
-    }
-
-    .nav {
-        flex: 0;
-    }
-
-    .flex-between {
-        justify-content: space-between;
-
-    }
-
-    header form {
-        max-width: 300px;
-    }
-
-    .nav__mobile-menu {
-        display: block;
-    }
-}
 
 .edit-link {
     color: rgb(86, 86, 223);
@@ -340,6 +332,7 @@ header form {
 
 .feed__post {
     display: flex;
+    overflow: hidden;
 
     gap: 2rem;
     height: 250px;
@@ -347,6 +340,10 @@ header form {
 
     background-color: var(--clr-neutral-300);
 
+}
+
+.feed-img-cont {
+    max-width: 300px;;
 }
 
 .feed__post__image {
@@ -429,4 +426,42 @@ header form {
     display: grid;
     width: 100%;
     gap: 1rem;
+}
+
+@media (max-width:978px) {
+
+    .auth-btn,
+    .nav__links {
+        display: none;
+
+    }
+
+    .nav {
+        flex: 0;
+    }
+
+    .flex-between {
+        justify-content: space-between;
+
+    }
+
+    header form {
+        max-width: 300px;
+    }
+
+    .nav__mobile-menu {
+        display: block;
+    }
+
+    .feed__post {
+        flex-direction: column;
+        height: 500px;
+        /* max-width: 240px;; */
+
+        align-items: center;
+    }
+
+    .post-heading {
+        font-size: var(--fs-700);
+    }
 }
