@@ -13,5 +13,5 @@ class RawPostForm(forms.Form):
     title       = forms.CharField(label='Enter Title', max_length=255, widget=forms.TextInput(attrs={'placeholder':'Enter a Title...'}))
     content     = forms.CharField(widget = TinyMCE())
     summary     = forms.CharField(required=False)
-    image  = forms.ImageField()
+    image       = forms.ImageField()
     
