@@ -1,23 +1,21 @@
-{% extends 'core.html' %}
-
-{% block content %}
+{% extends 'core.html' %} {% block content %}
 
 <div class="creation-form-container">
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.media }}
-        {{ form.title.label_tag }}
-        {{ form.title }}
-        <div>
-            {{ form.content.label_tag }}
-        </div>
-        {{ form.content }}
-        {{ form.image.label_tag }}
-        {{ form.image }}
-        <button class="submit-btn" type="submit">Post Blog</button>
-    </form>
-    
+  <form
+    action=""
+    method="POST"
+    enctype="multipart/form-data"
+    class="flex-between creation-form"
+  >
+    {% csrf_token %} {{ form.media }}
+    <!-- {{ form.title.label_tag }} -->
+    <div class="title">{{ form.title }}</div>
+    {{ form.content }}
+    <!-- {{ form.image.label_tag }} -->
+    <p>Add an image: {{ form.image }}</p>
+
+    <input type="button" class="button post-button" value="Post" />
+  </form>
 </div>
 
 {% endblock %}
-

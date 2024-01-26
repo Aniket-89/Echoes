@@ -16,6 +16,7 @@
     --fs-300: 0.9rem;
     --fs-400: 1rem;
     --fs-500: 1.2rem;
+    --fs-600: 1.5rem;
     --fs-700: 2rem;
     --fs-900: 3rem;
 
@@ -112,12 +113,12 @@ body {
 main {
 
     flex: 1;
-
+    padding: 1rem;
 }
 
 
 
-.input-field {
+.input-field  {
     width: 20rem;
     outline: none;
     border: 1px solid hsla(100, 7%, 8%, 0.1);
@@ -343,7 +344,8 @@ header form {
 }
 
 .feed-img-cont {
-    max-width: 300px;;
+    max-width: 300px;
+    ;
 }
 
 .feed__post__image {
@@ -365,9 +367,11 @@ header form {
 }
 
 .post-heading {
-    font-size: var(--fs-900);
+    font-size: var(--fs-700);
     font-weight: var(--fw-bold);
     color: var(--clr-neutral-900);
+
+    line-height: 1.4;
 }
 
 /* login page */
@@ -401,7 +405,11 @@ header form {
 }
 
 .post-detail-container {
+    margin: 2rem;
+    padding: 0 1rem;
+    
     flex-direction: column;
+    /* justify-content: center; */
 }
 
 .post-detail__image-cont {
@@ -421,13 +429,42 @@ header form {
     object-fit: cover;
 }
 
+
 .post-detail__content {
-    padding: 0 1rem;
+    margin: 0 2.5rem;
+    padding: 0 .5rem;
+
     display: grid;
-    width: 100%;
+    max-width: 50%;
     gap: 1rem;
 }
 
+.post-detail__content-body {
+    padding: 2rem 0;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+.post-detail__content-body > p {
+    font-size: var(--fs-500);
+
+    
+}
+.post-detail__content-body > p > strong {
+    line-height: 1.8;
+    font-size: var(--fs-600);
+}
+
+.creation-form {
+    flex-direction: column;
+}
+
+.post-button {
+    max-width: 10%;
+}
+
+.creation-form.title > input {
+
+}
 @media (max-width:978px) {
 
     .auth-btn,

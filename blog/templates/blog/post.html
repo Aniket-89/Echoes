@@ -1,17 +1,6 @@
 {% extends 'core.html' %} {% block content %}
 
 <div class="post-detail-container flex-between">
-  {% if post.image and post.image.url %}
-  <div class="post-detail__image-cont">
-    <img src="{{ post.image.url }}" class="post-detail__image" alt="image" />
-    {% else %}
-    <img
-      src="https://mix-breed.com/wp-content/uploads/2017/06/wood-blog-placeholder.jpg"
-      alt="Blog image"
-      class="post-detail__image"
-    />
-    {% endif %}
-  </div>
   <div class="post-detail__content">
     <div class="flex-between">
       <p class="fs-small">
@@ -21,7 +10,7 @@
             {% if request.user.author == post.author %} me {% else %}
             {{post.author}} {% endif %}</a
           ></strong
-        >
+        >, <span class="fs-small clr-accent">{{post.pub_date}}</span>
       </p>
 
       {% if user.is_authenticated and request.user.author == post.author %}
@@ -29,10 +18,22 @@
       {% endif %}
     </div>
 
-    <p class="fs-small clr-accent">Posted on {{post.pub_date}}</p>
-
-    <h1 class="post-title">{{post.title}}</h1>
+    <h1 class="post-heading">{{post.title}}</h1>
+    {% if post.image and post.image.url %}
+    <div class="post-detail__image-cont">
+      <img src="{{ post.image.url }}" class="post-detail__image" alt="image" />
+      {% else %}
+      <img
+        src="https://mix-breed.com/wp-content/uploads/2017/06/wood-blog-placeholder.jpg"
+        alt="Blog image"
+        class="post-detail__image"
+      />
+      {% endif %}
+    </div>
+    <div class="post-detail__content-body flex-between">
     {{post.content|safe}}
+
+    </div>
   </div>
 </div>
 
