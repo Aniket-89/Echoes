@@ -331,6 +331,10 @@ header form {
 
 }
 
+.feed__post-container {
+    padding: 0 20rem;
+}
+
 .feed__post {
     display: flex;
     overflow: hidden;
@@ -339,7 +343,7 @@ header form {
     height: 250px;
     /* margin: 1rem; */
 
-    background-color: var(--clr-neutral-300);
+    background-color: rgb(247, 252, 251);
 
 }
 
